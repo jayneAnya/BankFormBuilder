@@ -3,7 +3,7 @@ services:
     name: transaction-web-app
     env: dotnet
     buildCommand: 'dotnet build'
-    startCommand: 'dotnet run --urls=http://0.0.0.0:8080'
+    startCommand: ''dotnet TransactionWebApp.dll --urls=http://0.0.0.0:8080''
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
