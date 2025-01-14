@@ -1,11 +1,12 @@
+version: 1
 services:
-  - type: web
-    name: transaction-web-app
+  - name: transaction-web-app
+    type: web
     env: dotnet
-    buildCommand: 'dotnet build'
-    startCommand: ''dotnet TransactionWebApp.dll --urls=http://0.0.0.0:8080''
+    buildCommand: 'dotnet publish -c Release -o /app'
+    startCommand: 'dotnet /app/TransactionWebApp.dll'
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
     plan: starter  # You can change this to 'standard' or 'pro' for higher plans
-    region: oregon  # Specify the region where you'd like to deploy (e.g., 'oregon', 'california')
+    region: oregon  # You can specify other regions as needed
