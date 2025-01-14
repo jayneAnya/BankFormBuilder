@@ -55,7 +55,7 @@ public class HomeController : Controller
     public async Task<IActionResult> TransactionForm(string industry)
     {
         ViewBag.Industry = industry;
-        string url = $"http://localhost:9798/api/CustomerFields/{industry}";
+        string url = $"https://bankformbuilderapi.onrender.com/api/CustomerFields/{industry}";
         var response = await _httpClient.GetAsync(url);
 
         if (!response.IsSuccessStatusCode)
@@ -95,7 +95,7 @@ public class HomeController : Controller
             return View("TransactionForm");
         }
         ViewBag.Industry = accountNumber;
-        string url = $"http://localhost:9798/api/CustomerFields/{accountNumber}";
+        string url = $"https://bankformbuilderapi.onrender.com/api/CustomerFields/{accountNumber}";
         var response = await _httpClient.PostAsync(url, null);
 
         if (!response.IsSuccessStatusCode)
