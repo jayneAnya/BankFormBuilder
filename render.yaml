@@ -2,7 +2,7 @@ version: 1
 services:
   - name: transaction-web-app
     type: web
-    env: static
+    env: docker
     buildCommand: 'dotnet publish -c Release -o /app'
     startCommand: 'dotnet /app/TransactionWebApp.dll'
     envVars:

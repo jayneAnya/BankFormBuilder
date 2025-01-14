@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransactionWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26f5d9c71fb75631dc46233e66e59c1bb13e7105")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce0c7caa8900ba25f1da8fb6d97705fcc00ad901")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransactionWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransactionWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
