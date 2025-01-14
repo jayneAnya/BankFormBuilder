@@ -1,10 +1,11 @@
 services:
   - name: transaction-web-app
     type: web
-    env: docker
-    buildCommand: 'docker build -t transaction-web-app .'  # Build Docker image
+    env: aspnet
+    buildCommand: 'dotnet publish -c Release -o /app'
+    startCommand: 'dotnet /app/TransactionWebApp.dll'
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-    plan: starter  # Or another plan depending on your needs
-    region: oregon  # Set the region where you want to deploy
+    plan: free  # Or a paid plan depending on your needs
+    region: oregon
