@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: transaction-web-app
+    env: dotnet
+    buildCommand: 'dotnet build'
+    startCommand: 'dotnet run --urls=http://0.0.0.0:8080'
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+    plan: starter  # You can change this to 'standard' or 'pro' for higher plans
+    region: oregon  # Specify the region where you'd like to deploy (e.g., 'oregon', 'california')
