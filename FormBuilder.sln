@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionWebApp", "TransactionWebApp\TransactionWebApp.csproj", "{3FF3566B-A5BC-4559-A74B-42F3DBF2A2AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95E73B6E-B206-4F84-92A9-09E82ECF532A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E73B6E-B206-4F84-92A9-09E82ECF532A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E73B6E-B206-4F84-92A9-09E82ECF532A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E73B6E-B206-4F84-92A9-09E82ECF532A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF3566B-A5BC-4559-A74B-42F3DBF2A2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF3566B-A5BC-4559-A74B-42F3DBF2A2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF3566B-A5BC-4559-A74B-42F3DBF2A2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF3566B-A5BC-4559-A74B-42F3DBF2A2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

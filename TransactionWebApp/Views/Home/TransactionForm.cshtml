@@ -1,0 +1,96 @@
+@{
+    ViewBag.Title = "Dynamic Form";
+    var fields = ViewBag.Fields as List<string>;
+    var responseCode = ViewBag.ResponseCode as string;
+    var message = ViewBag.Message as string;
+    var industry = ViewBag.Industry as string;
+}
+
+<!-- Pop-Up Messages -->
+@if (!string.IsNullOrEmpty(message))
+{
+    if (responseCode == "200")
+    {
+        <div id="successMessage" class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+    else if (responseCode == "400")
+    {
+        <div id="errorMessage" class="alert alert-danger" role="alert">
+            @message
+        </div>
+    }
+}
+
+<!-- Forms Section -->
+<div class="row">
+    <div class="col-md-6">
+        <!-- Industry Selection Form -->
+        <form method="post" action="/Home/TransactionForm">
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" class="form-control" required>
+                    <option value="">--Select Industry--</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Education">Education</option>
+                    <option value="Telecommunication">Telecommunication</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Fields by Industry</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <!-- Account Number Form -->
+        <form method="post" action="/Home/GetFieldsByAccountNumber">
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber" class="form-control" placeholder="Enter Account Number" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Fields by Account Number</button>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+
+<!-- Display Response Based on ResponseCode -->
+@if (responseCode == "200" && fields != null && fields.Any())
+{
+    <h2>Form for @industry</h2>
+    <form>
+        @foreach (var field in fields)
+        {
+            <div class="form-group">
+                <label for="@field">@field</label>
+                <input type="text" class="form-control" id="@field" name="@field" placeholder="Enter @field">
+            </div>
+        }
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+}
+else
+{
+    <p class="text-info">No fields available for the selected industry.</p>
+}
+<script>
+    // Auto-dismiss messages after 5 seconds
+    window.onload = function () {
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (successMessage) {
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 2000); // 5000ms = 5 seconds
+        }
+
+        if (errorMessage) {
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 2000); // 5000ms = 5 seconds
+        }
+    };
+</script>
